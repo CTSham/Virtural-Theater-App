@@ -211,3 +211,84 @@ hr.sep {
 .font-weight-600 {
   font-weight: 600;
 }
+
+/* Form and layout utilities */
+.form-container {
+  max-width: 420px;
+  margin: 0 auto;
+}
+.upload-container {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.spacer-8 {
+  height: 8px;
+}
+.spacer-12 {
+  height: 12px;
+}
+.padding-12 {
+  padding: 12px;
+}
+.grid-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.grid-2col-16 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* More specific layout utilities */
+.grid-featured {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 24px;
+}
+.grid-admin {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 16px;
+}
+.flex-wrap-gap-12 {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.flex-gap-10 {
+  display: flex;
+  gap: 10px;
+}
+.margin-top-8 {
+  margin-top: 8px;
+}
+.margin-top-12 {
+  margin-top: 12px;
+}
+.margin-top-16 {
+  margin-top: 16px;
+}
+.margin-0-0-4 {
+  margin: 0 0 4px;
+}
+.margin-0-0-8 {
+  margin: 0 0 8px;
+}
+.max-width-560 {
+  max-width: 560px;
+}
+.font-size-24 {
+  font-size: 24px;
+}
+.font-weight-700 {
+  font-weight: 700;
+}
+.opacity-80 {
+  opacity: 0.8;
+}
+.grid-3col {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}

@@ -10,5 +10,5 @@ export default function Register() {
     const res = await fetch('/api/register', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ email, password }) })
     if (res.ok) router.push('/login'); else alert('Registration failed')
   }
-  return (<form className="panel" onSubmit={onSubmit} style={{maxWidth:420, margin:'0 auto'}}><h1>Create account</h1><input className="input" placeholder="Email" value={email} onChange={e=>setEmail(e.target.value)} /><div style={{height:8}}/><input className="input" type="password" placeholder="Password" value={password} onChange={e=>setPassword(e.target.value)} /><div style={{height:12}}/><button className="btn gold" type="submit">Sign up</button></form>)
+  return (<form className="panel" onSubmit={onSubmit} className="form-container"><h1>Create account</h1><input className="input" placeholder="Email" value={email} onChange={e=>setEmail(e.target.value)} /><div className="spacer-8"/><input className="input" type="password" placeholder="Password" value={password} onChange={e=>setPassword(e.target.value)} /><div className="spacer-12"/><button className="btn gold" type="submit">Sign up</button></form>)
 }

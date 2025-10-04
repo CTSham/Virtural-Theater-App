@@ -12,9 +12,9 @@ export default async function Library() {
       <h1>My Library</h1>
       <div className="grid cards">
         {purchases.map(p => (
-          <Link key={p.id} href={`/watch/${p.movieId}`} className="panel" style={{padding:12}}>
+          <Link key={p.id} href={`/watch/${p.movieId}`} className="panel padding-12">
             <img src={p.movie.poster} className="movie-poster" alt={p.movie.title} />
-            <div style={{fontWeight:600}}>{p.movie.title}</div>
+            <div className="font-weight-600">{p.movie.title}</div>
             <div className="small">{p.type} • {p.expiresAt ? `Expires ${p.expiresAt.toISOString().slice(0,10)}` : 'Yours to keep'}</div>
           </Link>
         ))}

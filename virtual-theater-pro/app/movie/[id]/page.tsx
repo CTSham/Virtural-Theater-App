@@ -7,7 +7,7 @@ export default function MoviePage({ params }: Props) {
   const movie = (movies as any[]).find(m => m.id === params.id)
   if (!movie) return <div>Not found</div>
   return (
-    <div className="grid" style={{gridTemplateColumns:'1fr 1.2fr', gap:24}}>
+    <div className="grid grid-featured">
       <div className="panel">
         <img src={movie.poster} alt={movie.title} className="movie-poster" />
         <div className="small">⭐ {movie.rating.toFixed(1)}</div>
@@ -16,7 +16,7 @@ export default function MoviePage({ params }: Props) {
         <h1>{movie.title}</h1>
         <div className="small">{movie.runtimeMins} min • Release {movie.release}</div>
         <p>{movie.synopsis}</p>
-        <div style={{display:'flex', gap:12, flexWrap:'wrap'}}>
+        <div className="flex-wrap-gap-12">
           <form action={`/api/checkout`} method="POST">
             <input type="hidden" name="movieId" value={movie.id} />
             <input type="hidden" name="purchaseType" value="rent" />

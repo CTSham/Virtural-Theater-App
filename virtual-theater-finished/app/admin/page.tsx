@@ -26,7 +26,7 @@ export default async function Admin() {
   }).join('')
 
   return (
-    <div className="grid" style={{gridTemplateColumns:'1.2fr .8fr', gap:16}}>
+    <div className="grid grid-admin">
       <div className="panel">
         <h2>Movies</h2>
         <table className="table">
@@ -47,7 +47,7 @@ export default async function Admin() {
         <h2>Analytics</h2>
         <div className="small">Revenue: ${(revenue/100).toFixed(2)} • Tickets: {purchases.length}</div>
         <svg width="400" height="180" viewBox="0 0 400 180" style={{border:'1px solid #2a2b33', borderRadius:8, background:'#0f1013'}} dangerouslySetInnerHTML={{__html: `<g fill='#9be9df'>${chartBars}</g>`}} />
-        <h3 style={{marginTop:16}}>Users</h3>
+        <h3 className="margin-top-16">Users</h3>
         <table className="table">
           <thead><tr><th>Email</th><th>Role</th></tr></thead>
           <tbody>

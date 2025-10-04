@@ -16,12 +16,12 @@ export default function Login() {
   }
 
   return (
-    <form className="panel" onSubmit={onSubmit} style={{maxWidth:420, margin:'0 auto'}}>
+    <form className="panel" onSubmit={onSubmit} className="form-container">
       <h1>Log in</h1>
       <input className="input" placeholder="Email" value={email} onChange={e=>setEmail(e.target.value)} />
-      <div style={{height:8}} />
+      <div className="spacer-8" />
       <input className="input" placeholder="Password" type="password" value={password} onChange={e=>setPassword(e.target.value)} />
-      <div style={{height:12}} />
+      <div className="spacer-12" />
       <button className="btn gold" type="submit">Log in</button>
     </form>
   )

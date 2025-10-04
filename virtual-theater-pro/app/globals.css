@@ -107,6 +107,58 @@ hr.sep {
 .padding-12 {
   padding: 12px;
 }
+
+/* More specific layout utilities */
+.grid-featured {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 24px;
+}
+.grid-admin {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 16px;
+}
+.flex-wrap-gap-12 {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.flex-gap-10 {
+  display: flex;
+  gap: 10px;
+}
+.margin-top-8 {
+  margin-top: 8px;
+}
+.margin-top-12 {
+  margin-top: 12px;
+}
+.margin-top-16 {
+  margin-top: 16px;
+}
+.margin-0-0-4 {
+  margin: 0 0 4px;
+}
+.margin-0-0-8 {
+  margin: 0 0 8px;
+}
+.max-width-560 {
+  max-width: 560px;
+}
+.font-size-24 {
+  font-size: 24px;
+}
+.font-weight-700 {
+  font-weight: 700;
+}
+.opacity-80 {
+  opacity: 0.8;
+}
+.grid-3col {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
 .warning {
   background: #2a1414;
   border: 1px solid #4b1e1e;

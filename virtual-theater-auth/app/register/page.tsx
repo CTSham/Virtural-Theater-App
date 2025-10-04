@@ -15,14 +15,14 @@ export default function Register() {
   }
 
   return (
-    <form className="panel" onSubmit={onSubmit} style={{maxWidth:420, margin:'0 auto'}}>
+    <form className="panel" onSubmit={onSubmit} className="form-container">
       <h1>Create account</h1>
       <input className="input" placeholder="Email" value={email} onChange={e=>setEmail(e.target.value)} />
-      <div style={{height:8}} />
+      <div className="spacer-8" />
       <input className="input" placeholder="Password" type="password" value={password} onChange={e=>setPassword(e.target.value)} />
-      <div style={{height:12}} />
+      <div className="spacer-12" />
       <button className="btn gold" type="submit">Sign up</button>
-      <div className="small" style={{marginTop:8}}>Passwords are hashed with bcrypt on the server.</div>
+      <div className="small margin-top-8">Passwords are hashed with bcrypt on the server.</div>
     </form>
   )
 }

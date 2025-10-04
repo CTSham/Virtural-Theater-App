@@ -9,7 +9,7 @@ export default async function MoviePage({ params }: { params: { id: string } }) 
   if (!movie) return <div className="panel">Not found</div>
 
   return (
-    <div className="grid" style={{gridTemplateColumns:'1fr 1.2fr', gap:24}}>
+    <div className="grid grid-featured">
       <div className="panel">
         <img src={movie.poster} alt={movie.title} className="movie-poster" />
         <div className="small">Mux Playback: {movie.muxPlaybackId ? 'Ready' : 'Not ready'}</div>
@@ -18,7 +18,7 @@ export default async function MoviePage({ params }: { params: { id: string } }) 
         <h1>{movie.title}</h1>
         <div className="small">{movie.runtimeMins} min • Release {movie.release}</div>
         <p>{movie.synopsis}</p>
-        <div style={{display:'flex', gap:12, flexWrap:'wrap'}}>
+        <div className="flex-wrap-gap-12">
           <form action={`/api/checkout`} method="POST">
             <input type="hidden" name="movieId" value={movie.id} />
             <input type="hidden" name="purchaseType" value="rent" />
