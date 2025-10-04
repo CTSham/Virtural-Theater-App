@@ -250,3 +250,10 @@ hr.sep {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
+
+/* Chart styling */
+.chart-svg {
+  border: 1px solid #2a2b33;
+  border-radius: 8px;
+  background: #0f1013;
+}

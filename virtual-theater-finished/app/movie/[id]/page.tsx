@@ -50,7 +50,7 @@ export default async function MoviePage({ params }: Props) {
         <hr className="sep" />
         <h3>Reviews</h3>
         <div className="flex-gap-10">
-          {movie.reviews.map(r => (
+          {movie.reviews.map((r: any) => (
             <div key={r.id} className="panel">
               <div className="small">{r.user.email} • ⭐ {r.rating}/5</div>
               <div>{r.content}</div>

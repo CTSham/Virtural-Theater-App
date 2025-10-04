@@ -19,7 +19,7 @@ export default async function Library() {
     <div>
       <h1>My Library</h1>
       <div className="grid cards">
-        {purchases.map(p => (
+        {purchases.map((p: any) => (
           <Link key={p.id} href={`/watch/${p.movieId}`} className="panel padding-12">
             <img src={p.movie.poster} className="movie-poster" alt={p.movie.title} />
             <div className="font-weight-600">{p.movie.title}</div>

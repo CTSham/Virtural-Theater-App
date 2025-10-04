@@ -8,7 +8,7 @@ export default function Browse() {
     <div className="vstack">
       <h1>Browse</h1>
       <div className="grid cards">
-        {(movies as any[]).map(m => (
+        {(movies as any[]).map((m: any) => (
           <Link key={m.id} href={`/movie/${m.id}`} className="panel vstack padding-12">
             <img src={m.poster} alt={m.title} className="movie-poster" />
             <div>

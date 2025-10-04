@@ -34,7 +34,7 @@ export default function Home() {
       <section>
         <h3 className="section-title">Trending Now</h3>
         <div className="grid cards">
-          {(movies as any[]).map((m) => (
+          {movies.map((m: any) => (
             <Link
               key={m.id}
               href={`/movie/${m.id}`}
