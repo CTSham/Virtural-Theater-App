@@ -13,16 +13,16 @@
     "seed": "node scripts/seed.mjs"
   },
   "dependencies": {
-    "hls.js": "1.5.12",
-    "next": "14.2.5",
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "stripe": "14.24.0",
+    "@auth/prisma-adapter": "^2.10.0",
     "@mux/mux-node": "8.6.0",
     "@prisma/client": "5.15.1",
-    "next-auth": "5.0.0-beta.22",
-    "@auth/prisma-adapter": "2.5.2",
-    "bcryptjs": "2.4.3"
+    "bcryptjs": "2.4.3",
+    "hls.js": "1.5.12",
+    "next": "^14.2.33",
+    "next-auth": "^5.0.0-beta.29",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "stripe": "14.24.0"
   },
   "devDependencies": {
     "@types/node": "20.11.30",
