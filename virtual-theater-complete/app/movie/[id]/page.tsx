@@ -101,8 +101,7 @@ export default async function MoviePage({ params }: Props) {
               const content = String(formData.get("content") || "");
               await addReview(movie.id, rating, content);
             }}
-            className="panel"
-            className="margin-top-12"
+            className="panel margin-top-12"
           >
             <div className="small">Add/Update your review</div>
             <input name="rating" className="input" placeholder="Rating 1-5" />
