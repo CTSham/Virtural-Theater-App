@@ -1,9 +1,9 @@
 "use client";
 import { useSearchParams, useRouter } from "next/navigation";
 import movies from "@/data/movies.json";
-import { useMemo } from "react";
+import { useMemo, Suspense } from "react";
 
-export default function CheckoutPage() {
+function CheckoutContent() {
   const params = useSearchParams();
   const router = useRouter();
   const id = params.get("movie") || "";
@@ -62,5 +62,13 @@ export default function CheckoutPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function CheckoutPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <CheckoutContent />
+    </Suspense>
   );
 }

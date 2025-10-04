@@ -1,8 +1,11 @@
 import Link from "next/link";
 import { prisma } from "@/lib/db";
 
-export default function Home() {
-  const movie = (movies as any[])[0];
+export default async function Home() {
+  const movie = await prisma.movie.findFirst({
+    orderBy: { createdAt: "desc" },
+  });
+  if (!movie) return <div className="panel">No movies yet.</div>;
   return (
     <div className="panel grid-featured">
       <img src={movie.poster} alt={movie.title} className="movie-poster" />
