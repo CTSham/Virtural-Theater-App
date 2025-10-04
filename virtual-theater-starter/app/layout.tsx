@@ -24,10 +24,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           </nav>
         </header>
         <main className="container">{children}</main>
-        <footer
-          className="container small"
-          style={{ opacity: 0.7, paddingBottom: 32 }}
-        >
+        <footer className="container small opacity-70 padding-bottom-32">
           © {new Date().getFullYear()} Virtual Theater — Demo build for Code by
           Corey
         </footer>

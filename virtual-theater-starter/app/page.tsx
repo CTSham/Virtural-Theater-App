@@ -6,18 +6,15 @@ export default function Home() {
   return (
     <div className="vstack">
       <section className="panel vstack">
-        <h1 style={{ fontSize: 28, margin: 0 }}>Featured Premiere</h1>
-        <div
-          className="grid"
-          style={{ gridTemplateColumns: "1.2fr 1fr", gap: 20 }}
-        >
+        <h1 className="font-size-28 margin-0">Featured Premiere</h1>
+        <div className="grid-featured">
           <img
             src={featured.poster}
             alt={featured.title}
             className="movie-poster"
           />
-          <div className="vstack">
-            <h2 style={{ margin: "4px 0 0" }}>{featured.title}</h2>
+          <div>
+            <h2 className="margin-4-0-0">{featured.title}</h2>
             <p className="small">
               {featured.runtimeMins} min • Release {featured.release}
             </p>
@@ -46,7 +43,7 @@ export default function Home() {
             >
               <img src={m.poster} alt={m.title} className="movie-poster" />
               <div>
-                <div style={{ fontWeight: 600 }}>{m.title}</div>
+                <div className="font-weight-600">{m.title}</div>
                 <div className="small">
                   {m.runtimeMins} min • {m.release}
                 </div>
