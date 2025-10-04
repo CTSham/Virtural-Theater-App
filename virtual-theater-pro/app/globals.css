@@ -99,6 +99,14 @@ hr.sep {
   border-top: 1px solid #262730;
   margin: 16px 0;
 }
+
+/* Utility classes for inline style replacements */
+.font-weight-600 {
+  font-weight: 600;
+}
+.padding-12 {
+  padding: 12px;
+}
 .warning {
   background: #2a1414;
   border: 1px solid #4b1e1e;

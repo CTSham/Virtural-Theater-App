@@ -151,3 +151,35 @@ hr.sep {
 .padding-bottom-32 {
   padding-bottom: 32px;
 }
+
+/* Form and layout utilities */
+.form-container {
+  max-width: 420px;
+  margin: 0 auto;
+}
+.upload-container {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.spacer-8 {
+  height: 8px;
+}
+.spacer-12 {
+  height: 12px;
+}
+.font-weight-600 {
+  font-weight: 600;
+}
+.padding-12 {
+  padding: 12px;
+}
+.grid-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.grid-2col-16 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}

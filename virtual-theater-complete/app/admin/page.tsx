@@ -18,7 +18,7 @@ export default async function Admin() {
   });
 
   return (
-    <div className="grid" style={{ gridTemplateColumns: "1fr 1fr", gap: 16 }}>
+    <div className="grid-2col-16">
       <div className="panel">
         <h2>Movies</h2>
         <table className="table">

@@ -24,15 +24,14 @@ export default async function Library() {
           <Link
             key={p.id}
             href={`/watch/${p.movieId}`}
-            className="panel"
-            style={{ padding: 12 }}
+            className="panel padding-12"
           >
             <img
               src={p.movie.poster}
               className="movie-poster"
               alt={p.movie.title}
             />
-            <div style={{ fontWeight: 600 }}>{p.movie.title}</div>
+            <div className="font-weight-600">{p.movie.title}</div>
             <div className="small">
               {p.type} •{" "}
               {p.expiresAt
