@@ -18,7 +18,7 @@ export default async function MoviePage({ params }: Props) {
   const isLoggedIn = !!session?.user?.id;
 
   return (
-    <div className="grid" style={{ gridTemplateColumns: "1fr 1.2fr", gap: 24 }}>
+    <div className="grid grid-featured">
       <div className="panel">
         <img src={movie.poster} alt={movie.title} className="movie-poster" />
         <div className="small">
@@ -32,7 +32,7 @@ export default async function MoviePage({ params }: Props) {
         </div>
         <p>{movie.synopsis}</p>
 
-        <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+        <div className="flex-wrap-gap-12">
           <form action={`/api/checkout`} method="POST">
             <input type="hidden" name="movieId" value={movie.id} />
             <input type="hidden" name="purchaseType" value="rent" />
@@ -83,7 +83,7 @@ export default async function MoviePage({ params }: Props) {
 
         <hr className="sep" />
         <h3>Reviews</h3>
-        <div style={{ display: "grid", gap: 10 }}>
+        <div className="flex-gap-10">
           {movie.reviews.map((r: any) => (
             <div key={r.id} className="panel">
               <div className="small">
@@ -102,18 +102,18 @@ export default async function MoviePage({ params }: Props) {
               await addReview(movie.id, rating, content);
             }}
             className="panel"
-            style={{ marginTop: 12 }}
+            className="margin-top-12"
           >
             <div className="small">Add/Update your review</div>
             <input name="rating" className="input" placeholder="Rating 1-5" />
-            <div style={{ height: 8 }} />
+            <div className="spacer-8" />
             <textarea
               name="content"
               className="input"
               placeholder="Your thoughts..."
               rows={3 as any}
             ></textarea>
-            <div style={{ height: 8 }} />
+            <div className="spacer-8" />
             <button className="btn gold" type="submit">
               Save Review
             </button>

@@ -27,7 +27,7 @@ function CheckoutContent() {
   }
 
   return (
-    <div className="grid" style={{ gridTemplateColumns: "1.2fr 1fr", gap: 24 }}>
+    <div className="grid grid-featured">
       <div className="panel">
         <h1>Checkout</h1>
         <p>
@@ -47,7 +47,7 @@ function CheckoutContent() {
           <button className="btn gold" onClick={fakePay}>
             Pay ${price.toFixed(2)}
           </button>
-          <div className="small" style={{ opacity: 0.8 }}>
+          <div className="small opacity-80">
             Demo only. Replace with Stripe Checkout in production.
           </div>
         </div>

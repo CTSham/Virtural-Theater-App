@@ -39,7 +39,7 @@ export default function Home() {
               key={m.id}
               href={`/movie/${m.id}`}
               className="panel vstack"
-              style={{ padding: 12 }}
+              className="padding-12"
             >
               <img src={m.poster} alt={m.title} className="movie-poster" />
               <div>

@@ -8,13 +8,13 @@ export default function MoviePage({ params }: Props) {
   if (!movie) return <div>Movie not found</div>;
 
   return (
-    <div className="grid" style={{ gridTemplateColumns: "1fr 1.2fr", gap: 24 }}>
+    <div className="grid grid-featured">
       <div className="panel vstack">
         <img src={movie.poster} alt={movie.title} className="movie-poster" />
         <div className="small">⭐ {movie.rating.toFixed(1)}</div>
       </div>
       <div className="vstack">
-        <h1 style={{ margin: "0 0 4px" }}>{movie.title}</h1>
+        <h1 className="margin-0-0-4">{movie.title}</h1>
         <div className="small">
           {movie.runtimeMins} min • Release {movie.release}
         </div>

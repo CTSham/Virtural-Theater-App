@@ -46,7 +46,7 @@ export default function WatchPage() {
 
   return (
     <div className="vstack">
-      <h1 style={{ margin: "0 0 8px" }}>{movie.title}</h1>
+      <h1 className="margin-0-0-8">{movie.title}</h1>
       {expiresAt && (
         <div className="small">
           Time remaining:{" "}
