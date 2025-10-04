@@ -22,11 +22,17 @@ export default async function Admin() {
   });
 
   const revenue = purchases.reduce(
-    (sum, p) => sum + (p.type === "BUY" ? p.movie.priceBuy : p.movie.priceRent),
+    (
+      sum: number,
+      p: {
+        type: string;
+        movie: { priceBuy: number; priceRent: number; title: string };
+      }
+    ) => sum + (p.type === "BUY" ? p.movie.priceBuy : p.movie.priceRent),
     0
   );
   const byMovie: Record<string, number> = {};
-  purchases.forEach((p) => {
+  purchases.forEach((p: { movie: { title: string } }) => {
     byMovie[p.movie.title] = (byMovie[p.movie.title] || 0) + 1;
   });
 

@@ -1,5 +1,5 @@
-import Link from 'next/link'
-import movies from '@/data/movies.json'
+import Link from "next/link";
+import movies from "@/data/movies.json";
 
 export default function Browse() {
   return (
@@ -10,11 +10,12 @@ export default function Browse() {
           <Link key={m.id} href={`/movie/${m.id}`} className="panel padding-12">
             <img src={m.poster} className="movie-poster" alt={m.title} />
             <div className="font-weight-600">{m.title}</div>
-            <div className="small">{m.runtimeMins} min • {m.release}</div>
+            <div className="small">
+              {m.runtimeMins} min • {m.release}
+            </div>
           </Link>
-        ))}
         ))}
       </div>
     </div>
-  )
+  );
 }
