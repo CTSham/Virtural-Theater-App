@@ -115,3 +115,6 @@ yarn-error.log*
 # Storybook build outputs
 .out
 .storybook-out
+
+# MCP Debug Tools
+.mcp-debug-tools/
