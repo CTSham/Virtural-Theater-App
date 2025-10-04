@@ -1,0 +1,14 @@
+[
+  {
+    "id": "indie-film-x",
+    "title": "Indie Film X",
+    "runtimeMins": 102,
+    "release": "June 2025",
+    "poster": "/posters/indie-film-x.jpg",
+    "trailerUrl": "https://stream.mux.com/EXAMPLE_TRAILER.m3u8",
+    "streamUrl": "https://stream.mux.com/EXAMPLE_STREAM.m3u8",
+    "priceRent": 499,
+    "priceBuy": 999,
+    "synopsis": "A gripping story of survival and redemption as a lone protagonist navigates a desolate landscape to confront their past and reimagine their future."
+  }
+]

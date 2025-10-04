@@ -1,0 +1,28 @@
+[
+  {
+    "id": "indie-film-x",
+    "title": "Indie Film X",
+    "runtimeMins": 102,
+    "release": "June 2025",
+    "poster": "/posters/indie-film-x.jpg",
+    "trailer": "/trailers/indie-film-x-trailer.m3u8",
+    "stream": "/streams/indie-film-x.m3u8",
+    "priceRent": 4.99,
+    "priceBuy": 9.99,
+    "synopsis": "A gripping story of survival and redemption as a lone protagonist navigates a desolate landscape to confront their past and reimagine their future.",
+    "rating": 4.3
+  },
+  {
+    "id": "sunset-roads",
+    "title": "Sunset Roads",
+    "runtimeMins": 94,
+    "release": "May 2025",
+    "poster": "/posters/sunset-roads.jpg",
+    "trailer": "/trailers/sunset-roads-trailer.m3u8",
+    "stream": "/streams/sunset-roads.m3u8",
+    "priceRent": 3.99,
+    "priceBuy": 8.99,
+    "synopsis": "Two strangers share a ride across the desert and discover the stories they were running from.",
+    "rating": 4.1
+  }
+]

@@ -1,0 +1,100 @@
+generator client { provider = "prisma-client-js" }
+datasource db { provider = "postgresql"; url = env("DATABASE_URL") }
+
+model User {
+  id            String   @id @default(cuid())
+  email         String?  @unique
+  passwordHash  String?
+  role          Role     @default(USER)
+  createdAt     DateTime @default(now())
+  accounts      Account[]
+  sessions      Session[]
+  purchases     Purchase[]
+  reviews       Review[]
+  watchlist     WatchlistItem[]
+}
+
+enum Role { USER FILMMAKER ADMIN }
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  expires      DateTime
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+  @@unique([identifier, token])
+}
+
+model Movie {
+  id           String   @id @default(cuid())
+  title        String
+  synopsis     String
+  runtimeMins  Int
+  release      String
+  poster       String
+  muxPlaybackId String?
+  trailerMuxPlaybackId String?
+  priceRent    Int
+  priceBuy     Int
+  createdAt    DateTime @default(now())
+  purchases    Purchase[]
+  reviews      Review[]
+}
+
+model Purchase {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  movieId   String
+  movie     Movie    @relation(fields: [movieId], references: [id], onDelete: Cascade)
+  type      PurchaseType
+  createdAt DateTime @default(now())
+  expiresAt DateTime?
+}
+
+model Review {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  movieId   String
+  movie     Movie    @relation(fields: [movieId], references: [id], onDelete: Cascade)
+  rating    Int
+  content   String
+  createdAt DateTime @default(now())
+  @@unique([userId, movieId])
+}
+
+model WatchlistItem {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  movieId   String
+  movie     Movie    @relation(fields: [movieId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+  @@unique([userId, movieId])
+}
+
+enum PurchaseType { RENT BUY }

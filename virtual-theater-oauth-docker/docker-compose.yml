@@ -1,0 +1,52 @@
+version: "3.9"
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: virtual_theater
+    ports:
+      - "5432:5432"
+    volumes:
+      - dbdata:/var/lib/postgresql/data
+
+  maildev:
+    image: maildev/maildev:2.1.0
+    ports:
+      - "1080:1080"  # Web UI
+      - "1025:1025"  # SMTP
+
+  app:
+    build: .
+    environment:
+      NODE_ENV: development
+      DATABASE_URL: postgresql://postgres:postgres@db:5432/virtual_theater
+      NEXT_PUBLIC_SITE_URL: http://localhost:3000
+      AUTH_SECRET: dev_secret_change_me
+      # OAuth
+      AUTH_GOOGLE_ID: your_google_client_id
+      AUTH_GOOGLE_SECRET: your_google_client_secret
+      AUTH_APPLE_ID: your_apple_client_id
+      AUTH_APPLE_SECRET: your_apple_client_secret
+      # Stripe
+      STRIPE_SECRET_KEY: sk_test_xxx
+      STRIPE_WEBHOOK_SECRET: whsec_xxx
+      # Mux
+      MUX_TOKEN_ID: ""
+      MUX_TOKEN_SECRET: ""
+      MUX_SIGNING_KEY_ID: ""
+      MUX_SIGNING_KEY_PRIVATE: ""
+      MUX_WEBHOOK_SECRET: ""
+      # SMTP (MailDev)
+      SMTP_HOST: maildev
+      SMTP_PORT: 1025
+      SMTP_USER: ""
+      SMTP_PASS: ""
+      SMTP_FROM: "Virtual Theater <no-reply@virtual.theater>"
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+      - maildev
+volumes:
+  dbdata:
